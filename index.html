@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enzo Snyman - Operations Architect & Growth Catalyst</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #003245;
+            --primary-light: #016389;
+            --accent: #0195CE;
+            --accent-light: #70C0DE;
+            --accent-soft: #9FD9EF;
+            --secondary: #017F77;
+            --secondary-light: #01BEB2;
+            --text-primary: #2D3748;
+            --text-secondary: #718096;
+            --bg-light: #FAF5FF;
+            --bg-card: #FFFFFF;
+            --border: #E2E8F0;
+            --success: #48BB78;
+            --warning: #ED8936;
+            --gradient-primary: linear-gradient(135deg, #003245 0%, #0195CE 100%);
+            --gradient-soft: linear-gradient(135deg, #FAF5FF 0%, rgba(1, 149, 206, 0.08) 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            padding: 0.75rem 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .logo:hover {
+            transform: translateX(5px);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 6rem 0 4rem;
+            background: var(--gradient-soft);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -25%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(1, 149, 206, 0.15) 0%, transparent 70%);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -30px) rotate(120deg); }
+            66% { transform: translate(-20px, 20px) rotate(240deg); }
+        }
+
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            animation: slideInLeft 0.8s ease-out 0.2s both;
+        }
+
+        .hero-description {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            animation: slideInLeft 0.8s ease-out 0.4s both;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            margin-bottom: 2rem;
+            animation: slideInLeft 0.8s ease-out 0.6s both;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            animation: slideInLeft 0.8s ease-out 0.8s both;
+        }
+
+        .btn {
+            padding: 0.875rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+            box-shadow: 0 4px 6px -1px rgba(1, 149, 206, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-light);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(1, 149, 206, 0.3);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--accept);
+            border: 2px solid var(--accent);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .hero-image {
+            position: relative;
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .profile-img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 20px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: rotate(2deg) scale(1.05);
+        }
+
+        .image-placeholder {
+            width: 100%;
+            max-width: 400px;
+            height: 400px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-placeholder i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .image-troubleshoot {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem;
+            border-radius: 8px;
+        }
+
+        /* Now Section */
+        .now-section {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            font-size: 1.125rem;
+        }
+
+        .now-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .now-card {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border);
+        }
+
+        .now-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .now-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: transparent !important;
+        }
+
+        .now-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .now-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Impact Section */
+        .impact-section {
+            padding: 5rem 0;
+            background: var(--bg-light);
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .impact-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .impact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent) 0%, var(--success) 100%);
+        }
+
+        .impact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .impact-metric {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--success) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .impact-label {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Projects Section */
+        .projects-section {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .project-card {
+            background: var(--bg-light);
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border);
+        }
+
+        .project-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            align-items: center;
+        }
+
+        .project-image {
+            height: 250px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .project-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-details {
+            padding: 2rem;
+        }
+
+        .project-tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: var(--accent);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .project-title {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .project-metrics {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .project-metric {
+            font-size: 0.875rem;
+        }
+
+        .metric-value {
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        /* Testimonials */
+        .testimonials-section {
+            padding: 5rem 0;
+            background: var(--bg-light);
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+            position: relative;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .quote-icon {
+            position: absolute;
+            top: 1.5rem;
+            left: 2rem;
+            font-size: 3rem;
+            color: var(--accent);
+            opacity: 0.2;
+        }
+
+        .testimonial-text {
+            font-size: 1.125rem;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            padding-left: 2rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding-left: 2rem;
+        }
+
+        .author-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+        }
+
+        .author-info {
+            flex: 1;
+        }
+
+        .author-name {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .author-title {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        /* Philosophy Section */
+        .philosophy-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .philosophy-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: white;
+        }
+
+        .philosophy-quote {
+            font-size: 1.5rem;
+            line-height: 1.8;
+            font-style: italic;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .philosophy-values {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .value-item {
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .value-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .value-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: transparent !important;
+        }
+
+        .value-name {
+            font-size: 1.125rem;
+            font-weight: 600;
+        }
+
+        /* Connect Section */
+        .connect-section {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .connect-container {
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            background: var(--bg-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--accent);
+            color: white;
+            transform: translateY(-5px) rotate(5deg);
+        }
+
+        /* Footer */
+        footer {
+            padding: 2rem 0;
+            background: var(--primary);
+            color: white;
+            text-align: center;
+        }
+
+        /* Troubleshooting Section */
+        .troubleshooting {
+            padding: 2rem;
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .troubleshooting h3 {
+            color: #856404;
+            margin-bottom: 1rem;
+        }
+
+        .troubleshooting ol {
+            margin-left: 1.5rem;
+            color: #856404;
+        }
+
+        .troubleshooting li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                padding: 1rem;
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .hero-cta {
+                justify-content: center;
+                flex-direction: column;
+            }
+
+            .project-content {
+                grid-template-columns: 1fr;
+            }
+
+            .project-image {
+                height: 200px;
+            }
+            
+            .project-metrics {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+
+        /* Scroll animations */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .scroll-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">Enzo<span>Snyman</span></a>
+            <ul class="nav-links">
+                <li><a href="#now">Now</a></li>
+                <li><a href="#impact">Impact</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#philosophy">Philosophy</a></li>
+                <li><a href="#connect">Connect</a></li>
+            </ul>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1>I Transform Chaos Into Systems</h1>
+                <p class="hero-subtitle">Operations Architect & Growth Catalyst</p>
+                <p class="hero-description">
+                    Hi, I'm Enzo. I build bridges between human potential and operational excellence. 
+                    With 9+ years of turning startup chaos into scalable systems, I believe the best 
+                    operations are invisible—they just work, letting teams focus on what matters.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">87%</span>
+                        <span class="stat-label">Productivity Gain</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">224+</span>
+                        <span class="stat-label">Hours Saved/Month</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">$705K</span>
+                        <span class="stat-label">Revenue Generated</span>
+                    </div>
+                </div>
+                <div class="hero-cta">
+                    <a href="#connect" class="btn btn-primary">Let's Build Something →</a>
+                    <a href="#projects" class="btn btn-secondary">View My Work</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- Try these common image paths if your image isn't showing -->
+                <img src="assets/Enzo-Snyman.jpg" alt="Enzo Snyman" class="profile-img" onerror="this.style.display='none'; document.getElementById('image-placeholder').style.display='flex';">
+                <div id="image-placeholder" class="image-placeholder" style="display: none;">
+                    <span style="font-size: 3rem;">👤</span>
+                    <p>Profile image not loading</p>
+                    <div class="image-troubleshoot">
+                        Check the filename matches exactly:<br>
+                        <code>assets/Enzo-Snyman.jpg</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Now Section -->
+    <section id="now" class="now-section scroll-reveal">
+        <div class="container">
+            <h2 class="section-title">What I'm Focused On Now</h2>
+            <p class="section-subtitle">Current projects and areas of exploration</p>
+            <div class="now-grid">
+                <div class="now-card">
+                    <div class="now-icon">🚀</div>
+                    <h3 class="now-title">AI-First Operations at Goldman & Associates</h3>
+                    <p class="now-description">Leading a complete digital transformation, integrating AI workflows that have already improved efficiency by 30% across all departments.</p>
+                </div>
+                <div class="now-card">
+                    <div class="now-icon">🎙️</div>
+                    <h3 class="now-title">Operations Strategy Consulting</h3>
+                    <p class="now-description">Helping startups and established businesses streamline their operations, reduce costs, and improve team productivity through systematic approaches.</p>
+                </div>
+                <div class="now-card">
+                    <div class="now-icon">📚</div>
+                    <h3 class="now-title">Writing: "The Invisible Operations"</h3>
+                    <p class="now-description">Documenting lessons learned from automating 500+ hours of manual work—how to build systems that disappear into the background.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section id="impact" class="impact-section scroll-reveal">
+        <div class="container">
+            <h2 class="section-title">Impact By The Numbers</h2>
+            <p class="section-subtitle">Real results from real transformations</p>
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-metric">29</div>
+                    <div class="impact-label">Remote Team Members Led</div>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-metric">40%</div>
+                    <div class="impact-label">Faster Response Times</div>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-metric">60%</div>
+                    <div class="impact-label">Redundancies Eliminated</div>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-metric">33%</div>
+                    <div class="impact-label">Client Retention Increase</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section scroll-reveal">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">Transformations that made a difference</p>
+            
+            <div class="project-card">
+                <div class="project-content">
+                    <div class="project-image">
+                        <img src="assets/GA.png" alt="Goldman & Associates" class="project-img">
+                    </div>
+                    <div class="project-details">
+                        <span class="project-tag">Legal Tech</span>
+                        <h3 class="project-title">Goldman & Associates Digital Revolution</h3>
+                        <p class="project-description">
+                            Architected and deployed an AI-first operational framework for a traditional law firm, 
+                            eliminating 50+ hours of weekly manual work and creating seamless inter-departmental workflows.
+                        </p>
+                        <div class="project-metrics">
+                            <span class="project-metric">Timeline: <span class="metric-value">2 months</span></span>
+                            <span class="project-metric">Team Size: <span class="metric-value">29 people</span></span>
+                            <span class="project-metric">ROI: <span class="metric-value">287%</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-content">
+                    <div class="project-image">
+                        <img src="assets/nerian_network_logo.jpeg" alt="Nerian Network" class="project-img">
+                    </div>
+                    <div class="project-details">
+                        <span class="project-tag">Blockchain</span>
+                        <h3 class="project-title">Nerian Network Node Sales Operation</h3>
+                        <p class="project-description">
+                            Built and managed on-chain sales infrastructure that generated $425k in revenue over 8 months, 
+                            while improving client engagement by 30% through strategic team coordination.
+                        </p>
+                        <div class="project-metrics">
+                            <span class="project-metric">Revenue: <span class="metric-value">$425K</span></span>
+                            <span class="project-metric">Duration: <span class="metric-value">8 months</span></span>
+                            <span class="project-metric">Engagement: <span class="metric-value">+30%</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-content">
+                    <div class="project-image">
+                        <img src="assets/the_courier_guy_sa_logo.jpeg" alt="The Courier Guy" class="project-img">
+                    </div>
+                    <div class="project-details">
+                        <span class="project-tag">Logistics</span>
+                        <h3 class="project-title">The Courier Guy Fleet Optimization</h3>
+                        <p class="project-description">
+                            Scaled local delivery operations by 37% in Johannesburg's Westrand, managing 55 vehicles 
+                            and 83 team members while implementing anti-hijacking strategies and route optimization.
+                        </p>
+                        <div class="project-metrics">
+                            <span class="project-metric">Fleet Growth: <span class="metric-value">37%</span></span>
+                            <span class="project-metric">Vehicles: <span class="metric-value">55</span></span>
+                            <span class="project-metric">New Contractors: <span class="metric-value">30+</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section scroll-reveal">
+        <div class="container">
+            <h2 class="section-title">What People Say</h2>
+            <p class="section-subtitle">From the teams and leaders I've worked with</p>
+            
+            <div class="testimonial-card">
+                <span class="quote-icon">"</span>
+                <p class="testimonial-text">
+                    Enzo doesn't just optimize operations—he transforms entire organizational cultures. 
+                    His ability to see the bigger picture while managing intricate details is remarkable. 
+                    Our firm runs like clockwork now.
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-avatar"></div>
+                    <div class="author-info">
+                        <div class="author-name">Melissa Huang</div>
+                        <div class="author-title">Senior Manager, Goldman & Associates</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <span class="quote-icon">"</span>
+                <p class="testimonial-text">
+                    Working with Enzo on our investor relations was game-changing. He doesn't just connect 
+                    dots—he creates constellations. Our network expanded to include top-tier VCs we never 
+                    thought we'd reach.
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-avatar"></div>
+                    <div class="author-info">
+                        <div class="author-name">Florian van Hecke</div>
+                        <div class="author-title">Co-Founder, Root</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section id="philosophy" class="philosophy-section scroll-reveal">
+        <div class="container">
+            <h2 class="philosophy-title">My Operating Philosophy</h2>
+            <p class="philosophy-quote">
+                "The best systems are the ones you don't notice—they simply enable 
+                excellence to emerge naturally from teams doing their best work."
+            </p>
+            <div class="philosophy-values">
+                <div class="value-item">
+                    <div class="value-icon">🧠</div>
+                    <div class="value-name">Systems Thinking</div>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">❤️</div>
+                    <div class="value-name">Human-Centered</div>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">🚀</div>
+                    <div class="value-name">Continuous Growth</div>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">🤝</div>
+                    <div class="value-name">Radical Collaboration</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Connect Section -->
+    <section id="connect" class="connect-section scroll-reveal">
+        <div class="container connect-container">
+            <h2 class="section-title">Let's Build Something Together</h2>
+            <p class="section-subtitle">
+                Whether you're drowning in operational chaos or ready to scale to the next level, 
+                I'd love to hear your story and explore how we can transform your operations.
+            </p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/enzo-snyman/" target="_blank" class="social-link" title="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="mailto:enzo.snyman2@gmail.com" class="social-link" title="Email">
+                    <i class="far fa-envelope"></i>
+                </a>
+                <a href="tel:+27609209822" class="social-link" title="Phone">
+                    <i class="fas fa-phone"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Enzo Snyman. Building better operations, one system at a time.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navigation scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll reveal animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Animated counter for stats
+        function animateValue(obj, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const value = Math.floor(progress * (end - start) + start);
+                obj.innerHTML = value + (obj.dataset.suffix || '');
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // Trigger counter animation when hero section is visible
+        const heroObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.dataset.animated) {
+                    entry.target.dataset.animated = 'true';
+                    const statNumbers = entry.target.querySelectorAll('.stat-number');
+                    statNumbers[0].dataset.suffix = '%';
+                    statNumbers[1].dataset.suffix = '+';
+                    statNumbers[2].dataset.suffix = 'K';
+                    animateValue(statNumbers[0], 0, 87, 2000);
+                    animateValue(statNumbers[1], 0, 224, 2000);
+                    animateValue(statNumbers[2], 0, 705, 2000);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        heroObserver.observe(document.querySelector('.hero-stats'));
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Check if profile image loaded successfully
+        window.addEventListener('load', function() {
+            const profileImg = document.querySelector('.profile-img');
+            if (profileImg && profileImg.naturalWidth === 0) {
+                profileImg.style.display = 'none';
+                document.getElementById('image-placeholder').style.display = 'flex';
+            }
+        });
+    </script>
+</body>
+</html>
