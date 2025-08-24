@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Enzo Snyman - Operations Director specializing in Workflow Automation, AI Integration, and Process Improvement. Transforming chaos into scalable systems with 9+ years of experience.">
-    <meta name="keywords" content="Operations Management, Workflow Automation, AI Integrations, Process Improvement, Project Management, SOP Development, KPI Tracking, Digital Transformation, Supply Chain Optimization, Logistics Management, B2B Strategic Partnerships, Investor Relations, Customer Relationship Management, Smartsheet, Make, Webhooks, Organizational Design, Change Management, Cross-Functional Collaboration">
-    <title>Enzo Snyman - Operations Director | Workflow Automation & AI Strategist</title>
+    <title>Enzo Snyman - Operations Architect & Growth Catalyst</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -447,77 +445,34 @@
             letter-spacing: 1px;
         }
 
-        /* Skills Section */
-        .skills-section {
-            padding: 5rem 0;
-            background: white;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .skill-category {
-            background: var(--bg-light);
-            padding: 1.5rem;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-        }
-
-        .skill-category h3 {
-            margin-bottom: 1rem;
-            color: var(--primary);
-            font-size: 1.25rem;
-        }
-
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .skill-tag {
-            background: var(--accent-soft);
-            color: var(--primary);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.875rem;
-            font-weight: 500;
-        }
-
         /* Projects Section */
         .projects-section {
             padding: 5rem 0;
-            background: var(--bg-light);
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
+            background: white;
         }
 
         .project-card {
-            background: white;
+            background: var(--bg-light);
             border-radius: 16px;
             overflow: hidden;
+            margin-bottom: 2rem;
             transition: all 0.3s ease;
             border: 1px solid var(--border);
-            height: 100%;
-            display: flex;
-            flex-direction: column;
         }
 
         .project-card:hover {
-            transform: translateY(-5px);
+            transform: translateX(10px);
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
 
+        .project-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            align-items: center;
+        }
+
         .project-image {
-            height: 200px;
+            height: 250px;
             background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
             display: flex;
             align-items: center;
@@ -532,10 +487,7 @@
         }
 
         .project-details {
-            padding: 1.5rem;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
+            padding: 2rem;
         }
 
         .project-tag {
@@ -548,33 +500,51 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-bottom: 1rem;
-            align-self: flex-start;
         }
 
         .project-title {
-            font-size: 1.5rem;
+            font-size: 1.75rem;
             margin-bottom: 0.5rem;
             color: var(--primary);
+        }
+
+        .project-title a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .project-title a:hover {
+            color: var(--accent);
+        }
+
+        .project-title a::after {
+            content: "↗";
+            font-size: 1.2rem;
+            opacity: 0.7;
+            transition: transform 0.3s ease;
+        }
+
+        .project-title a:hover::after {
+            transform: translate(3px, -3px);
         }
 
         .project-description {
             color: var(--text-secondary);
             margin-bottom: 1rem;
             line-height: 1.6;
-            flex-grow: 1;
         }
 
         .project-metrics {
             display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
+            gap: 2rem;
         }
 
         .project-metric {
             font-size: 0.875rem;
-            background: var(--bg-light);
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
         }
 
         .metric-value {
@@ -582,31 +552,14 @@
             color: var(--accent);
         }
 
-        .view-all-btn {
-            text-align: center;
-            margin-top: 2rem;
-        }
-
-        /* Hidden projects */
-        .hidden-projects {
-            display: none;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .hidden-projects.active {
-            display: grid;
-        }
-
         /* Testimonials */
         .testimonials-section {
             padding: 5rem 0;
-            background: white;
+            background: var(--bg-light);
         }
 
         .testimonial-card {
-            background: var(--bg-light);
+            background: white;
             padding: 2.5rem;
             border-radius: 16px;
             margin-bottom: 2rem;
@@ -718,7 +671,7 @@
         /* Connect Section */
         .connect-section {
             padding: 5rem 0;
-            background: var(--bg-light);
+            background: white;
         }
 
         .connect-container {
@@ -736,7 +689,7 @@
             width: 60px;
             height: 60px;
             border-radius: 12px;
-            background: white;
+            background: var(--bg-light);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -744,7 +697,6 @@
             font-size: 1.5rem;
             text-decoration: none;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
 
         .social-link:hover {
@@ -785,12 +737,6 @@
         }
 
         /* Mobile Responsive */
-        @media (max-width: 1024px) {
-            .hero-content h1 {
-                font-size: 2.8rem;
-            }
-        }
-
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -802,11 +748,6 @@
                 background: white;
                 padding: 1rem;
                 box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-                z-index: 1000;
-            }
-
-            .nav-links.active {
-                display: flex;
             }
 
             .mobile-menu-btn {
@@ -816,7 +757,6 @@
             .hero-container {
                 grid-template-columns: 1fr;
                 text-align: center;
-                gap: 2rem;
             }
 
             .hero-content h1 {
@@ -825,77 +765,24 @@
 
             .hero-stats {
                 justify-content: center;
-                flex-wrap: wrap;
-                gap: 1.5rem;
             }
 
             .hero-cta {
                 justify-content: center;
-                flex-wrap: wrap;
+                flex-direction: column;
             }
 
-            .projects-grid,
-            .hidden-projects {
+            .project-content {
                 grid-template-columns: 1fr;
             }
 
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .impact-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .philosophy-values {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .testimonial-text,
-            .testimonial-author {
-                padding-left: 0;
-            }
-            
-            .quote-icon {
-                position: relative;
-                top: 0;
-                left: 0;
-                margin-bottom: 1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 1rem;
-            }
-            
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1.2rem;
-            }
-            
-            .impact-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .philosophy-values {
-                grid-template-columns: 1fr;
-            }
-            
-            .section-title {
-                font-size: 2rem;
+            .project-image {
+                height: 200px;
             }
             
             .project-metrics {
                 flex-direction: column;
                 gap: 0.5rem;
-            }
-            
-            .social-links {
-                flex-wrap: wrap;
             }
         }
 
@@ -919,7 +806,6 @@
             <a href="#" class="logo">Enzo<span>Snyman</span></a>
             <ul class="nav-links">
                 <li><a href="#now">Now</a></li>
-                <li><a href="#skills">Skills</a></li>
                 <li><a href="#impact">Impact</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#philosophy">Philosophy</a></li>
@@ -935,13 +821,12 @@
     <section class="hero">
         <div class="container hero-container">
             <div class="hero-content">
-                <h1>Operations Director | Workflow Automation & AI Strategist</h1>
-                <p class="hero-subtitle">Transforming Chaos Into Scalable Systems</p>
+                <h1>I Transform Chaos Into Systems</h1>
+                <p class="hero-subtitle">Operations Architect & Growth Catalyst</p>
                 <p class="hero-description">
                     Hi, I'm Enzo. I build bridges between human potential and operational excellence. 
-                    With 9+ years of turning startup chaos into scalable systems, I specialize in 
-                    <strong>Workflow Automation</strong>, <strong>AI Integrations</strong>, and <strong>Process Improvement</strong>. 
-                    I believe the best operations are invisible—they just work, letting teams focus on what matters.
+                    With 9+ years of turning startup chaos into scalable systems, I believe the best 
+                    operations are invisible—they just work, letting teams focus on what matters.
                 </p>
                 <div class="hero-stats">
                     <div class="stat">
@@ -964,7 +849,7 @@
             </div>
             <div class="hero-image">
                 <!-- Try these common image paths if your image isn't showing -->
-                <img src="assets/Enzo-Snyman.jpg" alt="Enzo Snyman - Operations Director" class="profile-img" onerror="this.style.display='none'; document.getElementById('image-placeholder').style.display='flex';">
+                <img src="assets/Enzo-Snyman.jpg" alt="Enzo Snyman" class="profile-img" onerror="this.style.display='none'; document.getElementById('image-placeholder').style.display='flex';">
                 <div id="image-placeholder" class="image-placeholder" style="display: none;">
                     <span style="font-size: 3rem;">👤</span>
                     <p>Profile image not loading</p>
@@ -986,75 +871,17 @@
                 <div class="now-card">
                     <div class="now-icon">🚀</div>
                     <h3 class="now-title">AI-First Operations at Goldman & Associates</h3>
-                    <p class="now-description">Leading a complete digital transformation, integrating AI workflows that have already improved efficiency by 30% across all departments through strategic Process Improvement and Workflow Automation.</p>
+                    <p class="now-description">Leading a complete digital transformation, integrating AI workflows that have already improved efficiency by 30% across all departments.</p>
                 </div>
                 <div class="now-card">
                     <div class="now-icon">⚙️</div>
                     <h3 class="now-title">Operations Strategy Consulting</h3>
-                    <p class="now-description">Helping startups and established businesses streamline their operations, reduce costs, and improve team productivity through systematic approaches to Operations Management and Cross-Functional Collaboration.</p>
+                    <p class="now-description">Helping startups and established businesses streamline their operations, reduce costs, and improve team productivity through systematic approaches.</p>
                 </div>
                 <div class="now-card">
                     <div class="now-icon">📚</div>
                     <h3 class="now-title">Writing: "The Invisible Operations"</h3>
-                    <p class="now-description">Documenting lessons learned from automating 500+ hours of manual work—how to build systems that disappear into the background while enhancing Operational Excellence.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills-section scroll-reveal">
-        <div class="container">
-            <h2 class="section-title">Skills & Expertise</h2>
-            <p class="section-subtitle">Technical proficiencies and strategic capabilities</p>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Operations & Management</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Operations Management</span>
-                        <span class="skill-tag">Workflow Automation</span>
-                        <span class="skill-tag">Process Improvement</span>
-                        <span class="skill-tag">SOP Development</span>
-                        <span class="skill-tag">KPI Tracking</span>
-                        <span class="skill-tag">Talent Management</span>
-                        <span class="skill-tag">Strategic Planning</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Technical & Tools</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">AI Integrations</span>
-                        <span class="skill-tag">Smartsheet</span>
-                        <span class="skill-tag">Make</span>
-                        <span class="skill-tag">Webhooks</span>
-                        <span class="skill-tag">Data Analytics</span>
-                        <span class="skill-tag">Data Processing</span>
-                        <span class="skill-tag">Digital Transformation</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Industry Specializations</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Supply Chain Optimization</span>
-                        <span class="skill-tag">Logistics Management</span>
-                        <span class="skill-tag">Fleet Management</span>
-                        <span class="skill-tag">B2B Strategic Partnerships</span>
-                        <span class="skill-tag">Investor Relations</span>
-                        <span class="skill-tag">Customer Relationship Management</span>
-                        <span class="skill-tag">Healthcare Data Integration</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Leadership & Strategy</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Organizational Design</span>
-                        <span class="skill-tag">Change Management</span>
-                        <span class="skill-tag">Cross-Functional Collaboration</span>
-                        <span class="skill-tag">Business Strategy</span>
-                        <span class="skill-tag">Systems Thinking</span>
-                        <span class="skill-tag">Performance Enhancement</span>
-                        <span class="skill-tag">Talent Development</span>
-                    </div>
+                    <p class="now-description">Documenting lessons learned from automating 500+ hours of manual work—how to build systems that disappear into the background.</p>
                 </div>
             </div>
         </div>
@@ -1092,18 +919,17 @@
             <h2 class="section-title">Featured Projects</h2>
             <p class="section-subtitle">Transformations that made a difference</p>
             
-            <div class="projects-grid">
-                <div class="project-card">
+            <div class="project-card">
+                <div class="project-content">
                     <div class="project-image">
                         <img src="assets/GA.png" alt="Goldman & Associates Digital Transformation" class="project-img">
                     </div>
                     <div class="project-details">
                         <span class="project-tag">Legal Tech</span>
-                        <h3 class="project-title">Goldman & Associates Digital Revolution</h3>
+                        <h3 class="project-title"><a href="https://akivagoldman.com/" target="_blank" rel="noopener">Goldman & Associates Digital Revolution</a></h3>
                         <p class="project-description">
                             Architected and deployed an AI-first operational framework for a traditional law firm, 
-                            eliminating 50+ hours of weekly manual work and creating seamless inter-departmental workflows
-                            through strategic AI Integrations and Workflow Automation.
+                            eliminating 50+ hours of weekly manual work and creating seamless inter-departmental workflows.
                         </p>
                         <div class="project-metrics">
                             <span class="project-metric">Timeline: <span class="metric-value">2 months</span></span>
@@ -1112,18 +938,19 @@
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="project-card">
+            <div class="project-card">
+                <div class="project-content">
                     <div class="project-image">
-                        <img src="assets/nerian_network_logo.jpeg" alt="Nerian Network Blockchain Operations" class="project-img">
+                        <img src="assets/nerian_network_logo.jpeg" alt="Nerian Network" class="project-img">
                     </div>
                     <div class="project-details">
                         <span class="project-tag">Blockchain</span>
                         <h3 class="project-title">Nerian Network Node Sales Operation</h3>
                         <p class="project-description">
                             Built and managed on-chain sales infrastructure that generated $425k in revenue over 8 months, 
-                            while improving client engagement by 30% through strategic team coordination and
-                            Blockchain technology implementation.
+                            while improving client engagement by 30% through strategic team coordination.
                         </p>
                         <div class="project-metrics">
                             <span class="project-metric">Revenue: <span class="metric-value">$425K</span></span>
@@ -1132,18 +959,40 @@
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="project-card">
+            <div class="project-card">
+                <div class="project-content">
                     <div class="project-image">
-                        <img src="assets/digimedi_health_logo.jpeg" alt="DigiMedi Health Healthcare Transformation" class="project-img" onerror="this.parentElement.innerHTML='<div style=\'height:100%; display:flex; align-items:center; justify-content:center; font-size:3rem;\'>🏥</div>';">
+                        <img src="assets/the_courier_guy_sa_logo.jpeg" alt="The Courier Guy Logistics Optimization" class="project-img">
+                    </div>
+                    <div class="project-details">
+                        <span class="project-tag">Logistics</span>
+                        <h3 class="project-title"><a href="https://thecourierguy.co.za/" target="_blank" rel="noopener">The Courier Guy Fleet Optimization</a></h3>
+                        <p class="project-description">
+                            Scaled local delivery operations by 37% in Johannesburg's Westrand, managing 55 vehicles 
+                            and 83 team members while implementing anti-hijacking strategies and route optimization.
+                        </p>
+                        <div class="project-metrics">
+                            <span class="project-metric">Fleet Growth: <span class="metric-value">37%</span></span>
+                            <span class="project-metric">Vehicles: <span class="metric-value">55</span></span>
+                            <span class="project-metric">New Contractors: <span class="metric-value">30+</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-content">
+                    <div class="project-image">
+                        <img src="assets/digimedi_health_logo.png" alt="DigiMedi Health Healthcare Transformation" class="project-img" onerror="this.parentElement.innerHTML='<div style=\'height:100%; display:flex; align-items:center; justify-content:center; font-size:3rem;\'></div>';">
                     </div>
                     <div class="project-details">
                         <span class="project-tag">Healthcare</span>
-                        <h3 class="project-title">DigiMedi Health Expansion</h3>
+                        <h3 class="project-title"><a href="https://digimedihealth.com/" target="_blank" rel="noopener">DigiMedi Health Expansion</a></h3>
                         <p class="project-description">
                             Drove exponential growth in the South African healthcare sector, securing 2 public-private partnerships 
-                            with the government while implementing Healthcare Data Integration solutions and ensuring
-                            Regulatory Compliance with industry standards.
+                            with the government while implementing healthcare data integration solutions.
                         </p>
                         <div class="project-metrics">
                             <span class="project-metric">Sector: <span class="metric-value">Healthcare</span></span>
@@ -1154,36 +1003,16 @@
                 </div>
             </div>
 
-            <div class="hidden-projects" id="hiddenProjects">
-                <div class="project-card">
+            <div class="project-card">
+                <div class="project-content">
                     <div class="project-image">
-                        <img src="assets/the_courier_guy_sa_logo.jpeg" alt="The Courier Guy Logistics Optimization" class="project-img">
-                    </div>
-                    <div class="project-details">
-                        <span class="project-tag">Logistics</span>
-                        <h3 class="project-title">The Courier Guy Fleet Optimization</h3>
-                        <p class="project-description">
-                            Scaled local delivery operations by 37% in Johannesburg's Westrand, managing 55 vehicles 
-                            and 83 team members while implementing anti-hijacking strategies and route optimization
-                            for enhanced Logistics Management.
-                        </p>
-                        <div class="project-metrics">
-                            <span class="project-metric">Fleet Growth: <span class="metric-value">37%</span></span>
-                            <span class="project-metric">Vehicles: <span class="metric-value">55</span></span>
-                            <span class="project-metric">New Contractors: <span class="metric-value">30+</span></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <div style="height:100%; display:flex; align-items:center; justify-content:center; font-size:3rem;">🌐</div>
+                        <img src="assets/wildxyz_logo.png" alt="The community where you create, collect and explore experiential art." class="project-img" onerror="this.parentElement.innerHTML='<div style=\'height:100%; display:flex; align-items:center; justify-content:center; font-size:3rem;\'></div>';">
                     </div>
                     <div class="project-details">
                         <span class="project-tag">Web3</span>
-                        <h3 class="project-title">Wildxyz NFT Auction</h3>
+                        <h3 class="project-title"><a href="https://wild.xyz/" target="_blank" rel="noopener">Wildxyz NFT Auction</a></h3>
                         <p class="project-description">
-                            Led teams during the auction of "Sanctuary," a 1-of-1 NFT by Ryan Koopmans, achieving 25£ (approx. $280k).
+                            Led teams during the auction of "Sanctuary," a 1-of-1 NFT by Ryan Koopmans, achieving $280k mid-2023. A legendary 1-of-1 piece by the renowned digital artists Ryan Koopmans sold at 25Ξ.
                             Implemented innovative digital strategies for NFT marketing and community engagement.
                         </p>
                         <div class="project-metrics">
@@ -1193,29 +1022,6 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <div style="height:100%; display:flex; align-items:center; justify-content:center; font-size:3rem;">🤝</div>
-                    </div>
-                    <div class="project-details">
-                        <span class="project-tag">B2B</span>
-                        <h3 class="project-title">Root Strategic Partnerships</h3>
-                        <p class="project-description">
-                            Led B2B strategic investor relations, securing partnerships that drove a 30% increase in new business
-                            and expanding Root's investor network to include prominent firms like 500 Global, 70V, and Digital Finance Group.
-                        </p>
-                        <div class="project-metrics">
-                            <span class="project-metric">Growth: <span class="metric-value">30%</span></span>
-                            <span class="project-metric">Client: <span class="metric-value">€150k</span></span>
-                            <span class="project-metric">Retention: <span class="metric-value">+33%</span></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="view-all-btn">
-                <button id="viewAllBtn" class="btn btn-secondary">View All Projects</button>
             </div>
         </div>
     </section>
@@ -1231,12 +1037,12 @@
                 <p class="testimonial-text">
                     Enzo doesn't just optimize operations—he transforms entire organizational cultures. 
                     His ability to see the bigger picture while managing intricate details is remarkable. 
-                    Our firm runs like clockwork now thanks to his Workflow Automation and AI Integration expertise.
+                    Our firm runs like clockwork now.
                 </p>
                 <div class="testimonial-author">
                     <div class="author-avatar"></div>
                     <div class="author-info">
-                        <div class="author-name">Melissa H.</div>
+                        <div class="author-name">Melissa</div>
                         <div class="author-title">Senior Manager, Goldman & Associates</div>
                     </div>
                 </div>
@@ -1247,12 +1053,12 @@
                 <p class="testimonial-text">
                     Working with Enzo on our investor relations was game-changing. He doesn't just connect 
                     dots—he creates constellations. Our network expanded to include top-tier VCs we never 
-                    thought we'd reach through his exceptional Strategic Partnerships approach.
+                    thought we'd reach.
                 </p>
                 <div class="testimonial-author">
                     <div class="author-avatar"></div>
                     <div class="author-info">
-                        <div class="author-name">Florian v. H.</div>
+                        <div class="author-name">Florian</div>
                         <div class="author-title">Co-Founder, Root</div>
                     </div>
                 </div>
@@ -1399,7 +1205,7 @@
         const navLinks = document.querySelector('.nav-links');
         
         mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
         });
 
         // Check if profile image loaded successfully
@@ -1409,15 +1215,6 @@
                 profileImg.style.display = 'none';
                 document.getElementById('image-placeholder').style.display = 'flex';
             }
-        });
-
-        // View All Projects functionality
-        const viewAllBtn = document.getElementById('viewAllBtn');
-        const hiddenProjects = document.getElementById('hiddenProjects');
-        
-        viewAllBtn.addEventListener('click', () => {
-            hiddenProjects.classList.toggle('active');
-            viewAllBtn.textContent = hiddenProjects.classList.contains('active') ? 'Show Less Projects' : 'View All Projects';
         });
     </script>
 </body>
