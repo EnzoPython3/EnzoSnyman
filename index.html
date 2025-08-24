@@ -271,6 +271,19 @@
             transform: translateY(-2px);
         }
 
+        .btn-view-all {
+            background: var(--primary);
+            color: white;
+            margin: 2rem auto;
+            display: block;
+            width: fit-content;
+        }
+
+        .btn-view-all:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+        }
+
         .hero-image {
             position: relative;
             animation: fadeIn 1s ease-out;
@@ -388,6 +401,46 @@
         .now-description {
             color: var(--text-secondary);
             line-height: 1.6;
+        }
+
+        /* Skills Section */
+        .skills-section {
+            padding: 5rem 0;
+            background: var(--bg-light);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-category h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: var(--accent-soft);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
         }
 
         /* Impact Section */
@@ -552,6 +605,10 @@
             color: var(--accent);
         }
 
+        .additional-projects {
+            display: none;
+        }
+
         /* Testimonials */
         .testimonials-section {
             padding: 5rem 0;
@@ -600,6 +657,8 @@
 
         .author-info {
             flex: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .author-name {
@@ -784,6 +843,14 @@
                 flex-direction: column;
                 gap: 0.5rem;
             }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skill-tags {
+                justify-content: center;
+            }
         }
 
         /* Scroll animations */
@@ -806,6 +873,7 @@
             <a href="#" class="logo">Enzo<span>Snyman</span></a>
             <ul class="nav-links">
                 <li><a href="#now">Now</a></li>
+                <li><a href="#skills">Skills</a></li>
                 <li><a href="#impact">Impact</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#philosophy">Philosophy</a></li>
@@ -882,6 +950,64 @@
                     <div class="now-icon">📚</div>
                     <h3 class="now-title">Writing: "The Invisible Operations"</h3>
                     <p class="now-description">Documenting lessons learned from automating 500+ hours of manual work—how to build systems that disappear into the background.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section scroll-reveal">
+        <div class="container">
+            <h2 class="section-title">Skills & Expertise</h2>
+            <p class="section-subtitle">Technical proficiencies and strategic capabilities</p>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Operations & Management</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Operations Management</span>
+                        <span class="skill-tag">Workflow Automation</span>
+                        <span class="skill-tag">Process Improvement</span>
+                        <span class="skill-tag">SOP Development</span>
+                        <span class="skill-tag">KPI Tracking</span>
+                        <span class="skill-tag">Talent Management</span>
+                        <span class="skill-tag">Strategic Planning</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Technical & Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">AI Integrations</span>
+                        <span class="skill-tag">Smartsheet</span>
+                        <span class="skill-tag">Make</span>
+                        <span class="skill-tag">Webhooks</span>
+                        <span class="skill-tag">Data Analytics</span>
+                        <span class="skill-tag">Data Processing</span>
+                        <span class="skill-tag">Digital Transformation</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Industry Specializations</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Supply Chain Optimization</span>
+                        <span class="skill-tag">Logistics Management</span>
+                        <span class="skill-tag">Fleet Management</span>
+                        <span class="skill-tag">B2B Strategic Partnerships</span>
+                        <span class="skill-tag">Investor Relations</span>
+                        <span class="skill-tag">Customer Relationship Management</span>
+                        <span class="skill-tag">Healthcare Data Integration</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Leadership & Strategy</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Organizational Design</span>
+                        <span class="skill-tag">Change Management</span>
+                        <span class="skill-tag">Cross-Functional Collaboration</span>
+                        <span class="skill-tag">Business Strategy</span>
+                        <span class="skill-tag">Systems Thinking</span>
+                        <span class="skill-tag">Performance Enhancement</span>
+                        <span class="skill-tag">Talent Development</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -982,47 +1108,72 @@
                 </div>
             </div>
 
-            <div class="project-card">
-                <div class="project-content">
-                    <div class="project-image">
-                        <img src="assets/digimedi_health_logo.png" alt="DigiMedi Health Healthcare Transformation" class="project-img" onerror="this.parentElement.innerHTML='<div style=\'height:100%; display:flex; align-items:center; justify-content:center; font-size:3rem;\'></div>';">
+            <div class="additional-projects">
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-image">
+                            <img src="assets/digimedi_health_logo.png" alt="DigiMedi Health Healthcare Transformation" class="project-img" onerror="this.parentElement.innerHTML='<div style=\'height:100%; display:flex; align-items:center; justify-content:center; font-size:3rem;\'></div>';">
+                        </div>
+                        <div class="project-details">
+                            <span class="project-tag">Healthcare</span>
+                            <h3 class="project-title"><a href="https://digimedihealth.com/" target="_blank" rel="noopener">DigiMedi Health Expansion</a></h3>
+                            <p class="project-description">
+                                Drove exponential growth in the South African healthcare sector, securing 2 public-private partnerships 
+                                with the government while implementing healthcare data integration solutions.
+                            </p>
+                            <div class="project-metrics">
+                                <span class="project-metric">Sector: <span class="metric-value">Healthcare</span></span>
+                                <span class="project-metric">Partnerships: <span class="metric-value">2 secured</span></span>
+                                <span class="project-metric">Growth: <span class="metric-value">Exponential</span></span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="project-details">
-                        <span class="project-tag">Healthcare</span>
-                        <h3 class="project-title"><a href="https://digimedihealth.com/" target="_blank" rel="noopener">DigiMedi Health Expansion</a></h3>
-                        <p class="project-description">
-                            Drove exponential growth in the South African healthcare sector, securing 2 public-private partnerships 
-                            with the government while implementing healthcare data integration solutions.
-                        </p>
-                        <div class="project-metrics">
-                            <span class="project-metric">Sector: <span class="metric-value">Healthcare</span></span>
-                            <span class="project-metric">Partnerships: <span class="metric-value">2 secured</span></span>
-                            <span class="project-metric">Growth: <span class="metric-value">Exponential</span></span>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-image">
+                            <img src="assets/wildxyz_logo.png" alt="The community where you create, collect and explore experiential art." class="project-img" onerror="this.parentElement.innerHTML='<div style=\'height:100%; display:flex; align-items:center; justify-content:center; font-size:3rem;\'></div>';">
+                        </div>
+                        <div class="project-details">
+                            <span class="project-tag">Web3</span>
+                            <h3 class="project-title"><a href="https://wild.xyz/" target="_blank" rel="noopener">Wildxyz NFT Auction</a></h3>
+                            <p class="project-description">
+                                Led teams during the auction of "Sanctuary," a 1-of-1 NFT by Ryan Koopmans, achieving $280k mid-2023. A legendary 1-of-1 piece by the renowned digital artists Ryan Koopmans sold at 25Ξ.
+                                Implemented innovative digital strategies for NFT marketing and community engagement.
+                            </p>
+                            <div class="project-metrics">
+                                <span class="project-metric">Auction: <span class="metric-value">$280K</span></span>
+                                <span class="project-metric">Type: <span class="metric-value">1-of-1 NFT</span></span>
+                                <span class="project-metric">Role: <span class="metric-value">Project Lead</span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-image">
+                            <img src="assets/root_logo.jpeg" alt="Root Web3 Platform" class="project-img" onerror="this.parentElement.innerHTML='<div style=\'height:100%; display:flex; align-items:center; justify-content:center; font-size:3rem;\'></div>';">
+                        </div>
+                        <div class="project-details">
+                            <span class="project-tag">Web3</span>
+                            <h3 class="project-title"><a href="https://rooooooot.xyz/" target="_blank" rel="noopener">Root Web3 Platform</a></h3>
+                            <p class="project-description">
+                                Developed and implemented investor relations strategies for a cutting-edge Web3 platform, 
+                                expanding the network to include top-tier VCs and significantly enhancing investor engagement.
+                            </p>
+                            <div class="project-metrics">
+                                <span class="project-metric">Network: <span class="metric-value">Top-tier VCs</span></span>
+                                <span class="project-metric">Engagement: <span class="metric-value">Enhanced</span></span>
+                                <span class="project-metric">Role: <span class="metric-value">Strategic Advisor</span></span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="project-card">
-                <div class="project-content">
-                    <div class="project-image">
-                        <img src="assets/wildxyz_logo.png" alt="The community where you create, collect and explore experiential art." class="project-img" onerror="this.parentElement.innerHTML='<div style=\'height:100%; display:flex; align-items:center; justify-content:center; font-size:3rem;\'></div>';">
-                    </div>
-                    <div class="project-details">
-                        <span class="project-tag">Web3</span>
-                        <h3 class="project-title"><a href="https://wild.xyz/" target="_blank" rel="noopener">Wildxyz NFT Auction</a></h3>
-                        <p class="project-description">
-                            Led teams during the auction of "Sanctuary," a 1-of-1 NFT by Ryan Koopmans, achieving $280k mid-2023. A legendary 1-of-1 piece by the renowned digital artists Ryan Koopmans sold at 25Ξ.
-                            Implemented innovative digital strategies for NFT marketing and community engagement.
-                        </p>
-                        <div class="project-metrics">
-                            <span class="project-metric">Auction: <span class="metric-value">$280K</span></span>
-                            <span class="project-metric">Type: <span class="metric-value">1-of-1 NFT</span></span>
-                            <span class="project-metric">Role: <span class="metric-value">Project Lead</span></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <button id="view-all-btn" class="btn btn-view-all">View All Projects</button>
         </div>
     </section>
 
@@ -1062,11 +1213,6 @@
                         <div class="author-title">Co-Founder, Root</div>
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="view-all-btn">
-                <button id="viewAllBtn" class="btn btn-secondary">View All Projects</button>
             </div>
         </div>
     </section>
@@ -1219,6 +1365,26 @@
             if (profileImg && profileImg.naturalWidth === 0) {
                 profileImg.style.display = 'none';
                 document.getElementById('image-placeholder').style.display = 'flex';
+            }
+        });
+
+        // View All Projects functionality
+        const viewAllBtn = document.getElementById('view-all-btn');
+        const additionalProjects = document.querySelector('.additional-projects');
+        
+        viewAllBtn.addEventListener('click', () => {
+            if (additionalProjects.style.display === 'block') {
+                additionalProjects.style.display = 'none';
+                viewAllBtn.textContent = 'View All Projects';
+                // Scroll to top of projects section
+                document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
+            } else {
+                additionalProjects.style.display = 'block';
+                viewAllBtn.textContent = 'Show Less Projects';
+                // Scroll to the button after expanding
+                setTimeout(() => {
+                    viewAllBtn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 300);
             }
         });
     </script>
